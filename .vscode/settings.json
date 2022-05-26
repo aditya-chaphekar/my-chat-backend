@@ -1,0 +1,10 @@
+{
+  "files.autoSave": "onFocusChange",
+  "editor.fontFamily": "'Fira Code', 'Cartograph CF', monospace",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnType": false,
+  "editor.fontLigatures": true,
+  "eslint.alwaysShowStatus": true
+}
