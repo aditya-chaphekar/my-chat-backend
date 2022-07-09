@@ -1,20 +1,16 @@
-import express = require('express')
-import { MongooseError } from 'mongoose'
-import { handleSuccess } from '../utils/handler'
-import { loggerMiddleWare } from '../middleware/logger-middleware'
-import { chat } from '../database/model/chat'
+import { Application } from 'express'
+import { useExpressServer } from 'routing-controllers'
+import LoginController from './controller/login/login.controller'
+import RegisterController from './controller/register/register.controller'
 
-export const router = express.Router()
+const basePath = `/api`
 
-router.use(loggerMiddleWare)
-
-router.get('/', (req, res) => {
-  chat.find({}, (err: MongooseError, chats) => {
-    if (err) {
-      res.send(err)
-    }
-    handleSuccess(req, res, chats)
+const initRoute = (app: Application): void => {
+  useExpressServer(app, {
+    controllers: [LoginController, RegisterController],
+    defaultErrorHandler: true,
+    routePrefix: basePath,
   })
-})
+}
 
-export default router
+export default initRoute

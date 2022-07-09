@@ -14,6 +14,11 @@ export const errorConstants = Object.freeze({
     message: 'Unauthorized. Failed to verify your Identity.',
     status: 401,
   },
+  ER_04: {
+    code: 'ER_04',
+    message: 'Error Sending OTP',
+    status: 400,
+  },
 })
 
 export const successConstants = Object.freeze({
@@ -28,3 +33,5 @@ export const successConstants = Object.freeze({
     status: 200,
   },
 })
+export declare type Nullable<T> = T | null
+export type GenericObject = Record<string, any>

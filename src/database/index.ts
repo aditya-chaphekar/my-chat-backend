@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import * as mongoose from 'mongoose'
 import logger from '../utils/logger'
 import { MysqlDataSource } from './mysql-db'
 
